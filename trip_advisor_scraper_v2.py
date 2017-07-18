@@ -165,49 +165,4 @@ nodups = ks.drop_duplicates()
 #write results to csv for analysis in R
 nodups.to_csv("c:\\projects\\great_wolf_lodge\\trip_advisor_gw_reviews_kansas_city.csv", encoding="utf-8", index=False, mode='w')
 
-####################
-### location 2 - poconos
-####################    
-
-pc = scrape_data_ta('https://www.tripadvisor.com/Hotel_Review-g53638-d587742-Reviews-Great_Wolf_Lodge-Scotrun_Pocono_Mountains_Region_Pennsylvania.html#REVIEWS')
-pc.reset_index()
-
-nodups = pc.drop_duplicates()
-
-#write results to csv for analysis in R
-nodups.to_csv("c:\\projects\\great_wolf_lodge\\trip_advisor_gw_reviews_poconos.csv", encoding="utf-8", index=False, mode='w')
-
-#########################
-### location 3 -Grapevine
-#########################
-#
-
-#gv = scrape_data_ta('https://www.tripadvisor.com/Hotel_Review-g55930-d877210-Reviews-Great_Wolf_Lodge_Grapevine-Grapevine_Texas.html#REVIEWS')
-#gv.reset_index()
-#
-#nodups = gv.drop_duplicates()
-#
-##write results to csv for analysis in R
-#nodups.to_csv("c:\\projects\\great_wolf_lodge\\trip_advisor_gw_reviews_grapevine.csv", encoding="utf-8", index=False, mode='w')
-#
-
-########################
-## location 4 -Charlotte
-########################
-#
-#ch = scrape_data_ta('https://www.tripadvisor.com/Hotel_Review-g49049-d1424547-Reviews-Great_Wolf_Lodge_Concord-Concord_North_Carolina.html#REVIEWS')
-#ch.reset_index()
-#
-#nodups =ch.drop_duplicates()
-#
-##write results to csv for analysis in R
-#nodups.to_csv("c:\\projects\\great_wolf_lodge\\trip_advisor_gw_reviews_charlotte.csv", encoding="utf-8", index=False, mode='w')
-#
-
-############################
-## location 1 - kansas city
-## competitors
-###########################
-
-
 
