@@ -1,3 +1,3 @@
-# web_scrapers
-web scrapers for Yelp and Trip Advisor
+# Web Scrapers
+# Some simple web scrapers I made for Yelp and Trip Advisor
 
