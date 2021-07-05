@@ -1,10 +1,5 @@
 
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 19 18:12:18 2016
-
-@author: Matt McKenna
-"""
 
 import rauth
 import requests
@@ -32,7 +27,7 @@ print my_ip
 #Part 2: Use addresses to search Yelp API
 #########################################
 
-#setup my yelp API credentials
+#set up yelp API credentials
 consumer_key=" "
 consumer_secret=" "
 access_token_key=" "
@@ -63,7 +58,6 @@ def get_results_business(params):
 #######################################  
 #function for all other user's reviews
 #######################################
-
 
 def users_other_reviews(user_id, n_user_revs):
     time.sleep(4)
@@ -281,12 +275,8 @@ def run_location ( gw_yelp_id, ending_ ):
     return(nodups)
 
 
-#poconos
+#Example runs
 
 yelp_new_poco = run_location('great-wolf-lodge-scotrun', 30)
 
-
-#write results to csv for analysis in R
-yelp_new_poco.to_csv("c:\\projects\\great_wolf_lodge\\yelp_gw_reviews_schlitterbahn_tx.csv", encoding="utf-8", index=False, mode='w')
- 
 

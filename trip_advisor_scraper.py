@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 02 11:14:00 2016
-
-@author: Matthew.Mckenna
-"""
-
 
 import rauth
 import requests
@@ -34,10 +28,8 @@ print my_ip
 ### scraper functions 
 ###########################
 
-#<span class="expand_inline scrname
-#https://www.tripadvisor.com/members/bridgetc978
-
-def users_other_reviews(user_id):   
+#find other reviews for a given user
+def users_other_reviews(user_id):
     if user_id.find(' ')<0: 
         rating_ = []
         use_url = 'https://www.tripadvisor.com/members/' + user_id 
@@ -55,13 +47,11 @@ def users_other_reviews(user_id):
     else: 
         return -1
         
-    
+# trip advisor scraper
 def get_ta_one_page(use_url): 
     
     stars, dates, descs, authors, rev_cnts, url_str, status, user_loc, user_id, user_avgs = [], [], [], [], [], [], [], [], [], []
-    
-    #pilot_url = "https://www.tripadvisor.com/Hotel_Review-g38815-d274374-Reviews-Great_Wolf_Lodge_Kansas_City-Kansas_City_Kansas.html#REVIEWS"    
-    #use_url = 'https://www.yelp.com/user_details_reviews_self?userid=' + user_id + '&rec_pagestart=' + str(page_start)
+
     response = urllib2.urlopen(use_url)
     soup = bs4.BeautifulSoup(response.read(), "lxml")
     
@@ -121,8 +111,7 @@ def get_ta_one_page(use_url):
     
 
 def scrape_data_ta(main_url, start_page ):
-    #time.sleep(3)
-    
+
     response = urllib2.urlopen(main_url)
     soup = bs4.BeautifulSoup(response.read(), "lxml")
  
@@ -136,7 +125,6 @@ def scrape_data_ta(main_url, start_page ):
     frames = []
     
     for page_start in range(starting,tot_reviews, 10):
-    #for page_start in range(0,60, 10):
 
         print(page_start)
         this_url = "https://www.tripadvisor.com/Hotel_Review-g38815-d274374-Reviews-or" + str(page_start) +"--Great_Wolf_Lodge_Kansas_City-Kansas_City_Kansas.html#REVIEWS"
@@ -146,11 +134,9 @@ def scrape_data_ta(main_url, start_page ):
  
     return pd.concat(frames)
 
-    
-#test =get_ta_one_page('https://www.tripadvisor.com/Hotel_Review-g53638-d587742-Reviews-Great_Wolf_Lodge-Scotrun_Pocono_Mountains_Region_Pennsylvania.html#REVIEWS')
-    
+
 ############################
-## location 1 - kansas city
+## example location 1 - kansas city
 ############################   
 
 #check IP 
